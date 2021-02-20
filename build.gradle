@@ -40,7 +40,7 @@ publishing {
                 username = findProperty('gitHubUsername') ?: System.getenv('GIT_HUB_USR')
                 password = findProperty('gitHubPassword') ?: System.getenv('GIT_HUB_PSW')
             }
-            url = uri("https://maven.pkg.github.com/spring-cloud-portfolio/core-lib-starter")
+            url = uri("https://maven.pkg.github.com/spring-cloud-portfolio/person-api")
         }
     }
     publications {
