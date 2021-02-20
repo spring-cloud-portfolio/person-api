@@ -1,0 +1,70 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+    id 'org.springframework.boot' version '2.4.3'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+}
+
+group = 'com.doroshenko.serhey'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+jar {
+    enabled true
+}
+
+bootJar {
+    enabled false
+}
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    /* Boot */
+    implementation 'com.fasterxml.jackson.core:jackson-core'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations'
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            credentials {
+                username = findProperty('gitHubUsername') ?: System.getenv('GIT_HUB_USR')
+                password = findProperty('gitHubPassword') ?: System.getenv('GIT_HUB_PSW')
+            }
+            url = uri("https://maven.pkg.github.com/spring-cloud-portfolio/core-lib-starter")
+        }
+    }
+    publications {
+        //noinspection GroovyAssignabilityCheck
+        maven(MavenPublication) {
+            //noinspection GroovyAssignabilityCheck
+            from(components.java)
+            versionMapping {
+                //noinspection GroovyAssignabilityCheck
+                usage('java-api') {
+                    //noinspection GroovyAssignabilityCheck
+                    fromResolutionOf('runtimeClasspath')
+                }
+                //noinspection GroovyAssignabilityCheck
+                usage('java-runtime') {
+                    fromResolutionResult()
+                }
+            }
+        }
+    }
+}
+
+javadoc {
+    if (JavaVersion.current().isJava9Compatible()) {
+        options.addBooleanOption('html5', true)
+    }
+}
