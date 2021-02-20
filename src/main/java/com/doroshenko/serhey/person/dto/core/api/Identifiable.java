@@ -9,6 +9,9 @@ import java.io.Serializable;
  */
 public interface Identifiable extends Serializable {
 
+    /**
+     * Determine the minimum id value
+     */
     int MIN_ID = 1;
 
     Long getId();
