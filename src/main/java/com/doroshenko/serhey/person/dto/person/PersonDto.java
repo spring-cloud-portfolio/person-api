@@ -1,6 +1,7 @@
 package com.doroshenko.serhey.person.dto.person;
 
 import com.doroshenko.serhey.person.dto.core.base.BaseDto;
+import com.doroshenko.serhey.person.enumeration.person.Gender;
 
 import java.time.LocalDate;
 
@@ -12,12 +13,21 @@ import java.time.LocalDate;
  */
 public class PersonDto extends BaseDto {
 
+    private Gender gender;
     private String lastName;
     private String firstName;
     private String middleName;
     private LocalDate birthDay;
 
     /* Getters and setters */
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
     public String getLastName() {
         return lastName;
     }
