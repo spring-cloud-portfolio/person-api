@@ -14,10 +14,25 @@ public interface Identifiable extends Serializable {
      */
     int MIN_ID = 1;
 
+    /**
+     * Getter for identifier
+     *
+     * @return {@code Long}
+     */
     Long getId();
 
+    /**
+     * Setter for identifier
+     *
+     * @param id identifier, could be null
+     */
     void setId(Long id);
 
+    /**
+     * Utility method to define is the entity new or already persisted in database
+     *
+     * @return {@code boolean true} if entity does not persisted
+     */
     boolean isNew();
 
 }
