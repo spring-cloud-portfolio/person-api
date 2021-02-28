@@ -15,11 +15,11 @@ public class InternalUserQueryFilter extends BaseQueryFilter {
     private final String username;
 
     @JsonCreator
-    protected InternalUserQueryFilter(@JsonProperty("page") int page,
-                                      @JsonProperty("size") int size,
-                                      @JsonProperty("username") String username,
-                                      @JsonProperty("descending") boolean descending,
-                                      @JsonProperty("sortingField") String sortingField) {
+    public InternalUserQueryFilter(@JsonProperty("page") int page,
+                                   @JsonProperty("size") int size,
+                                   @JsonProperty("username") String username,
+                                   @JsonProperty("descending") boolean descending,
+                                   @JsonProperty("sortingField") String sortingField) {
         super(page, size, descending, sortingField);
         this.username = username;
     }
