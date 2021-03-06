@@ -21,7 +21,7 @@ public class PersonDto extends BaseDto {
     private String firstName;
     private String middleName;
     private LocalDate birthDay;
-    private Set<PersonType> types;
+    private Set<PersonType> personTypes;
 
     /* Getters and setters */
     public Gender getGender() {
@@ -64,9 +64,9 @@ public class PersonDto extends BaseDto {
         this.birthDay = birthDay;
     }
 
-    public Set<PersonType> getTypes() {
-        if (types == null) types = EnumSet.noneOf(PersonType.class);
-        return types;
+    public Set<PersonType> getPersonTypes() {
+        if (personTypes == null) personTypes = EnumSet.noneOf(PersonType.class);
+        return personTypes;
     }
 
 }
