@@ -26,16 +26,16 @@ public class PersonQueryFilter extends BaseQueryFilter {
     private final Set<PersonType> personTypes;
 
     @JsonCreator
-    protected PersonQueryFilter(@JsonProperty("page") int page,
-                                @JsonProperty("size") int size,
-                                @JsonProperty("gender") Gender gender,
-                                @JsonProperty("lastName") String lastName,
-                                @JsonProperty("firstName") String firstName,
-                                @JsonProperty("birthDay") LocalDate birthDay,
-                                @JsonProperty("middleName") String middleName,
-                                @JsonProperty("descending") boolean descending,
-                                @JsonProperty("sortingField") String sortingField,
-                                @JsonProperty("personTypes") Set<PersonType> personTypes) {
+    public PersonQueryFilter(@JsonProperty("page") int page,
+                             @JsonProperty("size") int size,
+                             @JsonProperty("gender") Gender gender,
+                             @JsonProperty("lastName") String lastName,
+                             @JsonProperty("firstName") String firstName,
+                             @JsonProperty("birthDay") LocalDate birthDay,
+                             @JsonProperty("middleName") String middleName,
+                             @JsonProperty("descending") boolean descending,
+                             @JsonProperty("sortingField") String sortingField,
+                             @JsonProperty("personTypes") Set<PersonType> personTypes) {
         super(page, size, descending, sortingField);
         this.gender = gender;
         this.lastName = lastName;
