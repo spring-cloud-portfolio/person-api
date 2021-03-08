@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.Set;
 
 /**
@@ -41,7 +42,7 @@ public class PersonQueryFilter extends BaseQueryFilter {
         this.birthDay = birthDay;
         this.firstName = firstName;
         this.middleName = middleName;
-        this.personTypes = personTypes;
+        this.personTypes = personTypes == null ? Collections.emptySet() : Set.copyOf(personTypes);
     }
 
     /* Getters */
