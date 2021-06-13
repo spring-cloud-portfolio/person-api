@@ -1,20 +1,16 @@
 plugins {
     id 'java'
     id 'maven-publish'
-    id 'org.springframework.boot' version '2.4.5'
+    id 'org.springframework.boot' version '2.5.1'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 }
 
 group = 'com.doroshenko.serhey'
 version = '0.0.1-SNAPSHOT'
 
-jar {
-    enabled true
-}
+jar { enabled true }
 
-bootJar {
-    enabled false
-}
+bootJar { enabled false }
 
 java {
     withJavadocJar()
@@ -29,8 +25,10 @@ repositories {
 
 dependencies {
     /* Boot */
-    implementation 'com.fasterxml.jackson.core:jackson-core'
-    implementation 'com.fasterxml.jackson.core:jackson-annotations'
+    implementation('org.springframework:spring-core')
+    implementation('com.fasterxml.jackson.core:jackson-core')
+    implementation('com.fasterxml.jackson.core:jackson-databind')
+    implementation('com.fasterxml.jackson.core:jackson-annotations')
 }
 
 publishing {
@@ -58,7 +56,7 @@ publishing {
                 }
                 //noinspection GroovyAssignabilityCheck
                 usage('java-runtime') {
-                    fromResolutionResult()
+                    fromResolutionResult(null)
                 }
             }
         }
