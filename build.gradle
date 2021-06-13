@@ -56,7 +56,8 @@ publishing {
                 }
                 //noinspection GroovyAssignabilityCheck
                 usage('java-runtime') {
-                    fromResolutionResult(null)
+                    //noinspection GroovyImplicitNullArgumentCall
+                    fromResolutionResult()
                 }
             }
         }
