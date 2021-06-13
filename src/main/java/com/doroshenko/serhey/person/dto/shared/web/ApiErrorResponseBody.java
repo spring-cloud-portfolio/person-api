@@ -7,6 +7,12 @@ import org.springframework.util.Assert;
 import java.io.Serial;
 import java.io.Serializable;
 
+/**
+ * Represents a data transfer object, which will be returned as a response body in error case
+ *
+ * @author Serhey Doroshenko
+ * @see Serializable
+ */
 @JsonDeserialize(builder = ApiErrorResponseBody.Builder.class)
 public class ApiErrorResponseBody implements Serializable {
     @Serial
