@@ -1,10 +1,12 @@
 package com.doroshenko.serhey.person.dto.security.user.registration;
 
 import com.doroshenko.serhey.person.dto.person.PersonDto;
-import com.doroshenko.serhey.person.enumeration.person.Gender;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
@@ -15,11 +17,18 @@ import java.io.Serializable;
  */
 public class InternalUserRegistrationDto implements Serializable {
 
+    @NotBlank
     private final String email;
+    @NotBlank
     private final String username;
+    @NotBlank
     private final String password;
+    @Valid
+    @NotNull
     private final PersonDto person;
+    @NotBlank
     private final String mobilePhone;
+    @NotBlank
     private final String passwordConfirmation;
 
     @JsonCreator

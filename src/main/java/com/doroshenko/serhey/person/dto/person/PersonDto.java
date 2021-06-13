@@ -4,6 +4,8 @@ import com.doroshenko.serhey.person.dto.core.base.BaseDto;
 import com.doroshenko.serhey.person.enumeration.person.Gender;
 import com.doroshenko.serhey.person.enumeration.person.PersonType;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.EnumSet;
 import java.util.Set;
@@ -16,10 +18,14 @@ import java.util.Set;
  */
 public class PersonDto extends BaseDto {
 
+    @NotNull
     private Gender gender;
+    @NotBlank
     private String lastName;
+    @NotBlank
     private String firstName;
     private String middleName;
+    @NotNull
     private LocalDate birthDay;
     private Set<PersonType> personTypes;
 
