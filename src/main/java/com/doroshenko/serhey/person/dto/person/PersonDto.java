@@ -24,6 +24,7 @@ public class PersonDto extends BaseDto {
     private String lastName;
     @NotBlank
     private String firstName;
+    @NotBlank
     private String middleName;
     @NotNull
     private LocalDate birthDay;
